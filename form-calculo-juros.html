@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<!-- Link para Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<title> Cálculo de juros </title>
+
+<meta charset="utf-8">
+
+</head>
+<body>
+
+  <div style="padding: 5vh; ">
+
+    <form action="processa-calculo-juros.php" method="POST">
+
+      <div class="form-group">
+        <div class="form-group col-md-4">
+          <label for="valor-financiamento"> Valor a ser financiado </label>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">R$</span>
+            </div>
+            <input type="text" class="form-control" id="valor-financiamento" placeholder="Valor do financiamento" name="valor-financiamento">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="taxa-juros"> Taxa de juros </label>
+        <input type="text" class="form-control" id="taxa-juros" placeholder="Taxa de juros ao mês (%a.m.)" name="taxa-juros">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="periodo"> Período de financiamento </label>
+        <select id="periodo" class="form-control" name="periodo">
+          <option selected value="1"> 1 mês </option>
+          <option value="2"> 2 meses </option>
+          <option value="3"> 3 meses </option>
+          <option value="4"> 4 meses </option>
+          <option value="5"> 5 meses </option>
+          <option value="6"> 6 meses </option>
+          <option value="7"> 7 meses </option>
+          <option value="8"> 8 meses </option>
+          <option value="9"> 9 meses </option>
+          <option value="10"> 10 meses </option>
+          <option value="11"> 11 meses </option>
+          <option value="12"> 12 meses </option>
+        </select>
+        <p><br>
+          <button type="submit" class="btn btn-outline-primary" name="enviar">Calcular</button>
+        </p>
+      </div>
+
+    </form>
+
+    Fórmula para cálculo de juros compostos: 
+
+    <table border="2" style="padding: 2vh; margin: 2vh; ">
+      <tr>
+        <td>
+          <b>
+          Valor Final = Valor Investido x (1 + Taxa De Juros Ao Mês)<sup>periodo</sup>
+          </b>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          A taxa de juros (%a.m.) somada à 1, elevados ao período do financiamento <br>
+          e multiplicado pelo valor financiado, <br>
+          resultará no valor total final do financiamento. <br>
+        </td>
+      </tr>
+    </table>
+
+  </div>
+
+</body>
+</html>
